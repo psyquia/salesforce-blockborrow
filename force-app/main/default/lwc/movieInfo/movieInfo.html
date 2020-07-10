@@ -1,0 +1,85 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__body slds-card__body_inner">
+            <article class="slds-card slds-card_boundary">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a class="slds-card__header-link slds-truncate">Plot</a>
+                    </h2>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner">
+                {plot}
+              </div>
+              <footer class="slds-card__footer">
+
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item padding="around-small" size="3">
+                        <div class="header-column">
+                            <b>Director:</b> {director}
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="8">
+                        <div class="header-column">
+                            <b>Actors:</b> {actors}
+                        </div>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="none" size="3">
+                        <lightning-icon data-id="rating_star" variant={ratingVariant} size="x-small" icon-name="utility:favorite" alternative-text="new_opportunity" title="new_opportunity"></lightning-icon>
+                        <b> Rating: </b> <p style="display:inline;font-size:13px">{rating}/10</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="none" size="5">
+                      <b> Country: </b> <p style="display:inline;font-size:13px">{country}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="none" size="3">
+                      <b> Rated: </b> <p style="display:inline;font-size:13px">{rated}</p>
+                    </lightning-layout-item>
+ 
+                </lightning-layout>
+
+
+
+                
+              </footer>
+            </article>
+        </div>
+
+        
+        
+        
+
+        <div class="slds-card__body slds-card__body_inner">
+            <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+              <li class="slds-p-horizontal_small slds-size_2-of-3 slds-medium-size_2-of-3">
+                <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                  
+                  <div class="slds-media__body slds-m-left_none">
+                    <iframe if:true={showTrailer} width="550" height="300" src={trailer}></iframe>
+                  </div>
+
+                </article>
+              </li>
+              <li class="slds-p-horizontal_small slds-size_1-of-3 slds-medium-size_1-of-3">
+                <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                  
+                  <div class="slds-media__body">
+                    <img width={poster.width} src={poster.src}>
+                  </div>
+                  
+                </article>
+              </li>
+            </ul>
+        </div>
+
+
+
+        
+
+
+
+  </article>
+</template>

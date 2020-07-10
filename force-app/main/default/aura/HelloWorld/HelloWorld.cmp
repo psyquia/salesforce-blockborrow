@@ -1,0 +1,34 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+	
+
+	<ltng:require scripts="{!$Resource.jQuery}" 
+                  afterScriptsLoaded="{!c.loadJquery}"/>
+    
+    <aura:attribute name="text1" type="String" default="" />
+    <aura:attribute name="ohover" type="Boolean" default="false" />
+    
+    <textarea id="textareaChars" maxlength="100" value="{!v.text1}"></textarea> <br/>
+    
+    <span id="chars">10000</span> characters remaining   
+    
+    <aura:attribute name="greeting" type="String" default="World" />
+    	
+    
+    <div class="slds-card" > 
+        <div id="title" class="slds-card__body slds-card__body_inner slds-p-bottom_medium"> 
+            Hello, {!v.greeting}!
+            <!-- <c:helloPlayground/> -->
+			<lightning:button label="Framework Button" onclick="{!c.handleClick}"/>
+            
+            <lightning:input aura:id="myInput" type="text" value="{!v.greeting}"/>
+        </div>	
+        
+        
+    </div>
+    <iframe id="my_iframe"
+                    width="560" height="315" 
+                    src="" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen="allowfullscreen"></iframe>
+</aura:component>

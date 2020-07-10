@@ -1,0 +1,99 @@
+<template>
+  <article class="slds-card">
+
+
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title" style="font-size: large;">
+            <lightning-icon icon-name="action:log_event" size="small"></lightning-icon>
+            &nbsp; <b> Create A Borrow Record</b>
+
+          </h2>
+
+          <div class="create_select">
+            <template if:true={newBorrower}>
+              <lightning-button variant="brand" label="Create New User" class="create_type" onclick={handleNewOrOld}>
+              </lightning-button>
+              <lightning-button variant="neutral" label="With Existing User" class="create_type"
+                onclick={handleNewOrOld}>
+              </lightning-button>
+              <c-create-a-borrower></c-create-a-borrower>
+            </template>
+            <template if:false={newBorrower}>
+              <lightning-button variant="neutral" label="With New User" class="create_type" onclick={handleNewOrOld}>
+              </lightning-button>
+              <lightning-button variant="brand" label="With Existing User" class="create_type" onclick={handleNewOrOld}>
+              </lightning-button>
+
+              <div class="slds-m-top_small slds-m-bottom_small">
+                <c-borrower-search len="2" onborselect={handleBorSelect}>
+                </c-borrower-search>
+                <template if:true={selectedBorrower}>
+                  <div class="selectedBorrower slds-app-launcher__tile-body">
+                    <b>
+                      <h2 class="selectTitle">{selectedBorrower.Name}</h2>
+                    </b>
+                    <p>{selectedBorrower.Email__c}</p>
+                  </div>
+                </template>
+                <template if:false={selectedBorrower}>
+                  <div class="selectedBorNone slds-app-launcher__tile-body">
+                    <b>
+                      <h2 class="selectTitle"> ... </h2>
+                    </b>
+                  </div>
+                </template>
+              </div>
+              <div class="movie-and-confirm">
+                <div class="slds-m-top_small slds-m-bottom_small">
+                  <div onkeyup={handleKeyUp}>
+                    <div class="slds-p-around_none">
+
+                      <div class="slds-combobox__form-element">
+                        <c-movie-search len="2" onmovieselect={handleMovieSelect}>
+                        </c-movie-search>
+
+                      </div> <br><br><br><br><br><br><br><br>
+
+                    </div>
+                  </div>
+                  <template if:false={selectedMovie}>
+                    <div class="selectedMovieNone slds-app-launcher__tile-body">
+                      <b>
+                        <h2 class="selectTitle"> ... </h2>
+                      </b>
+                    </div>
+                  </template>
+                  <template if:true={selectedMovie}>
+                    <div class="selectedMovie slds-app-launcher__tile-body">
+                      <b>
+                        <h2 class="selectTitle">{selectedMovie.Name} ({selectedMovie.Year__c}) </h2>
+                      </b>
+                      <c-rating rating={selectedMovie.Rating__c}></c-rating>
+                    </div>
+                  </template>
+                  <lightning-combobox name="moviecopy" label="Movie Copy" value={value} placeholder="Select Movie Copy"
+                    options={options} onchange={handleChange} class="choose_copy"></lightning-combobox>
+
+                  <lightning-button variant="brand" label="Confirm" icon-name="utility:check" class="confirm"
+                    onclick={handleConfirm}></lightning-button>
+                  <br><br><br><br><br><br><br><br>
+
+
+                </div>
+
+              </div>
+            </template>
+
+          </div>
+
+
+        </div>
+
+
+      </header>
+    </div>
+  </article>
+</template>

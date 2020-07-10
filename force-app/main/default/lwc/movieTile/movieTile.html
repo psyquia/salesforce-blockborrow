@@ -1,0 +1,24 @@
+<template>
+
+  <li onmouseover={handleMouseOver} onmouseout={handleMouseOut}>
+    <a
+        onclick={handleMovieClicked}
+        class="slds-app-launcher__tile slds-text-link_reset slds-truncate"
+    >
+        <div class="slds-media__body slds-align_absolute-center">
+            <span><img src={movie.Poster__c}></span>
+        </div>
+        <div class="slds-app-launcher__tile-body">
+            <span class="slds-text-link"> <h2>{movie.Name} ({movie.Year__c}) </h2></span>
+            <c-rating rating={movie.Rating__c}></c-rating>
+            <p >Director: {movie.Director__c} </p>
+            <br>
+            <p>Times Borrowed: {movie.TotalBorrows__c}</p>
+            <p>Available: &nbsp;
+                <lightning-icon icon-name={icon} size="x-small" variant={iconVariant}></lightning-icon>
+            </p>
+          </div>
+    </a>
+</li>
+  
+</template>

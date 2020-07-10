@@ -1,0 +1,15 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+            <template if:true={canprevious}>
+                <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}></lightning-button>
+            </template>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="grow"></lightning-layout-item>
+        <lightning-layout-item>
+            <template if:true={cannext}>
+                <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right" onclick={nextHandler}></lightning-button>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

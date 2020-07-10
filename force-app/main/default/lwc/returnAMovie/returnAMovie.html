@@ -1,0 +1,14 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="inputs" onkeyup={handleKeyUp}>
+                <lightning-input name="enter-search" label="ENTER BORROW RECORD ID" type="text" value={bRecordId}>
+                </lightning-input>
+            </div>
+            <div class="create-btn">
+                <lightning-button variant="brand" label="Return Movie" onclick={handleReturn}>
+                </lightning-button>
+            </div>
+        </div>
+    </article>
+</template>

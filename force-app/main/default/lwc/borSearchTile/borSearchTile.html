@@ -1,0 +1,16 @@
+<template>
+
+    <li onmouseover={handleMouseOver} onmouseout={handleMouseOut}>
+      <a
+          onclick={handleBorClicked}
+          class="slds-app-launcher__tile slds-text-link_reset slds-truncate"
+      >
+          <div class="slds-app-launcher__tile-body">
+              <span class="slds-text-link"> <h2>{borrower.Name}  </h2></span>
+              <c-rating rating={borrower.Rating__c}></c-rating>
+              <p class="pDir">Email: {borrower.Email__c} </p>
+            </div>
+      </a>
+  </li>
+    
+  </template>

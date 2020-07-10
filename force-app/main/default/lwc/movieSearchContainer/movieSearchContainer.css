@@ -1,0 +1,9 @@
+.THIS {
+    height: 600px;
+}
+
+.slds-card {
+    width:100%;
+    height: 160px;
+    max-height: 160px;
+}

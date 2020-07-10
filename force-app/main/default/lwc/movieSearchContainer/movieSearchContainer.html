@@ -1,0 +1,24 @@
+<template>
+    <article class="slds-card">
+
+      
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            
+            <div class="slds-media__body">
+                <div class="slds-media__figure">
+                   
+                </div>
+                <h2 class="slds-card__header-title" style="font-size: large;">
+                    <lightning-icon icon-name="standard:search"></lightning-icon>
+                    &nbsp; <b> Search For A Movie</b>
+                </h2>
+                <c-movie-search 
+                    len="5" 
+                    tooltip="true"
+                    nav="true"></c-movie-search>
+            </div>
+          </header>
+        </div>
+      </article>
+</template>

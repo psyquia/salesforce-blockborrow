@@ -1,0 +1,23 @@
+<template>
+    <article class="slds-card">
+
+      <div if:false={isLoaded}>
+        <lightning-spinner alternative-text="Loading..."></lightning-spinner>
+      </div>
+
+      <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+          <div class="slds-media__figure">
+              <lightning-icon icon-name="standard:screen" alternative-text="Approved" title="Approved"></lightning-icon>
+          </div>
+          <div if:true={isLoaded} class="slds-media__body">
+              <span>Movie</span>
+            <h2 class="slds-card__header-title" style="font-size: x-large;">
+              <b>{name} ({year})</b>
+            </h2>
+          </div>
+          
+        </header>
+      </div>
+    </article>
+</template>

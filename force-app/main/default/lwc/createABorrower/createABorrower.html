@@ -1,0 +1,14 @@
+<template>
+    <div class="inputs" onkeyup={handleKeyUpName}>
+        <lightning-input name="enter-search" label="Enter bororower name here..." type="search" value={nameText}>
+        </lightning-input>
+    </div>
+    <div class="inputs" onkeyup={handleKeyUpEmail}>
+        <lightning-input name="enter-search" label="Enter borrower email here..." type="search" value={emailText}>
+        </lightning-input>
+    </div>
+    <div class="create-btn">
+        <lightning-button variant="success" label="Create" class="create_type" onclick={handleCreate}>
+        </lightning-button>
+    </div>
+</template>

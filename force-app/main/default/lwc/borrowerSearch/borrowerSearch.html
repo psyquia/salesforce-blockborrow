@@ -1,0 +1,48 @@
+<template>
+    <div onkeyup={handleKeyUp}>
+        <lightning-input
+            name="enter-search"
+            label="Enter a name or email..."
+            type="search"
+            value={queryText}
+        ></lightning-input>
+    </div>
+    <template if:true={tooltip}>
+        <template if:false={movieRes}>  
+            <br>
+            <h2 class="slds-card__header-title" style="font-style: italic;">
+                &nbsp; Results will appear here!
+            </h2>
+        </template>
+    </template>
+    <template if:true={search}>
+        <template if:true={borrowers}>
+            <section
+                id="popup"
+                class="slds-popover slds-nubbin_left"
+                role="dialog"
+            >
+                <template if:true={borrowers.length}>
+                    <ol>
+                        <template for:each={borrowers} for:item="bor"> 
+                            <c-bor-search-tile 
+                                key={bor.Id} 
+                                borrower={bor}
+                                nav={nav}
+                                onborselect={handleBorClicked}
+                            ></c-bor-search-tile>
+                        </template> 
+                    </ol>
+                </template>
+                <template if:false={borrowers.length}>
+                    <br>
+                    <h2 class="slds-card__header-title" style="font-style: italic;">
+                        &nbsp; No matches found! <lightning-icon size="small" icon-name="utility:puzzle"></lightning-icon>
+                    </h2>
+                    
+                </template>
+            </section>
+        </template>
+    </template>
+
+</template>

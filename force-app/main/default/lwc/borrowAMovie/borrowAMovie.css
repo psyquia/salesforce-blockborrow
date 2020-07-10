@@ -1,0 +1,82 @@
+.slds-card {
+    width:100%;
+    height: 450px;
+}
+
+ol{
+    margin-left: 10px;
+    list-style: none;
+}
+
+h2.selectTitle{
+    color:white;
+}
+
+.selectedMovie{
+    position: absolute;
+    width: 60%;
+    height: 55px;
+    top: 271px;
+    background: rgb(51, 121, 219);
+}
+
+.selectedMovieNone{
+    position: absolute;
+    width: 60%;
+    height: 55px;
+    top: 271px;
+    background: rgb(151, 151, 151);
+}
+
+.selectedBorrower{
+    position: absolute;
+    width: 60%;
+    height: 48px;
+    top: 166px;
+    background: rgb(51, 121, 219);
+}
+
+.selectedBorNone{
+    position: absolute;
+    width: 60%;
+    height: 48px;
+    top: 166px;
+    background: rgb(151, 151, 151);
+}
+
+.confirm{
+    position: absolute;
+    top: 400px;
+}
+
+.choose_copy{
+    position:absolute;
+    top:336px;
+}
+
+
+c-borrower-search{
+    position: absolute;
+    width: 95%;
+    top: 110px;
+}
+c-movie-search{
+    position: absolute;
+    width: 95%;
+    top: 215px;
+}
+
+lightning-combobox{
+    color:black;
+    top: 90px;
+}
+
+.create_type{
+    padding-right:15px;
+}
+
+.create_select{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+

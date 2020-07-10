@@ -1,0 +1,30 @@
+h2{
+    color: rgb(0, 195, 255);
+    font-size: 14px;
+}
+img {
+    width: 60px;
+}
+div {
+    color: white;
+    background: rgba(15, 15, 15, 0.712);
+}
+
+.slds-text-link{
+    font-weight: bold;
+    
+}
+.slds-media__body {
+    width: 30px;
+    background: #ECEFF6;
+    
+}
+
+
+a{
+    width: 550px;
+    max-width: 550px;
+    height: 80px;
+    max-height: 80px;
+    margin-left: 0px;
+}

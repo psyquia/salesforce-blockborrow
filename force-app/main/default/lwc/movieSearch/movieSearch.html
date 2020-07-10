@@ -1,0 +1,49 @@
+<template>
+    <div onkeyup={handleKeyUp}>
+        <lightning-input
+            name="enter-search"
+            label="Enter a movie title here..."
+            type="search"
+            value={queryText}
+        ></lightning-input>
+    </div>
+    <template if:true={tooltip}>
+        <template if:false={movieRes}>  
+            <br>
+            <h2 class="slds-card__header-title" style="font-style: italic;">
+                &nbsp; Results will appear here!
+            </h2>
+        </template>
+    </template>
+    <template if:true={search}>
+        <template if:true={movieRes}>
+            <section
+                id="popup"
+                class="slds-popover slds-nubbin_left"
+                role="dialog"
+                style={style}
+            >
+                <template if:true={movieRes.length}>
+                    <ol>
+                        <template for:each={movieRes} for:item="movie"> 
+                            <c-movie-search-tile 
+                                key={movie.Id} 
+                                movie={movie}
+                                nav={nav}
+                                onmovieselect={handleMovieClicked}
+                            ></c-movie-search-tile>
+                        </template> 
+                    </ol>
+                </template>
+                <template if:false={movieRes.length}>
+                    <br>
+                    <h2 class="slds-card__header-title" style="font-style: italic;">
+                        &nbsp; No matches found! <lightning-icon size="small" icon-name="utility:puzzle"></lightning-icon>
+                    </h2>
+                    
+                </template>
+            </section>
+        </template>
+    </template>
+
+</template>
