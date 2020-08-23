@@ -1,25 +1,5 @@
 public with sharing class MovieManager {
 
-    // DELETE THIS
-    public static void PopulateMovies(){
-        List<String> movieTitles = new List<String> {'Parasite', 'Good Time', 'White Chicks', 'Disaster Movie', 
-                                                    'Superman: Red Son', 'Avengers: Endgame', 'Avatar'};
-        for(String title : movieTitles){
-            CreateMovieRecord(title);
-        }
-    }
-
-    // DELETE THIS
-    public static void DeleteAllMovies(){
-        List<Movie__c> allMovies = [SELECT Id FROM Movie__c];
-        
-        delete allMovies;
-    }
-
-    public MovieManager() {
-
-    }
-
     public static void updateCopiesZero(){
         List<Movie__c> allMovies = [SELECT Id, NumberOfCopies__c, AvailableCopies__c FROM Movie__c];
 
@@ -214,9 +194,8 @@ public with sharing class MovieManager {
         // Get trailer link from YouTube Search API and place in result map
         Map<String, Object> youtube = getJson('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=' 
                                                     + title.replace(' ','%20') + '%20' + year.format().remove(',') + '%20trailer&key=%MYKEY%');
-        
-        // odwa
-                                                    Map<String, Object> items = (Map <String, Object>) ( (List<Object>)youtube.get('items') ).get(0);
+
+        Map<String, Object> items = (Map <String, Object>) ( (List<Object>)youtube.get('items') ).get(0);
         String videoId = (String) ( (Map <String, Object>)items.get('id') ).get('videoId');
 
         result.put('Trailer', 'https://www.youtube.com/embed/' + videoId);
